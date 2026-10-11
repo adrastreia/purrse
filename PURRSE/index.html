@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Basic information about our webpage -->
+        <meta charset="UTF-8"> 
+        <meta name="viewport"
+            content="width=device-width, initial scale=1.0"> <!--para fit sa phone OR pc-->
+        <meta name="theme-color"
+            content="#fff7f8"> 
+            <!--soft pink atake ko nian-->
+        
+            <title> Purrse - Your Cozy Budget Tracker </title>
+
+                <link rel="manifest"
+                    href="./manifest.json"> <!--mobile app hehe-->
+
+                <link rel="stylesheet"
+                    href="style.css"> <!--nakakonek yn sha s css file-->
+
+                <script src="script.js" 
+                    defer> </script> <!--konek sa js file tapos yung defer bzt un ira-run ni browser kinemberlu-->
+
+    </head>
+
+    <body>
+
+        <div class="app-container">
+
+            <header class="app-header">
+
+                <div class="brand">
+
+                    <span class="brand-icon"
+                        aria-hidden="true">♡</span>
+
+                    <div>
+                    <h1>Purrse</h1>
+                    <p class="tagline">your money's cozy little home</p>
+                    </div>
+
+                </div>
+
+                <button id="themeButton"
+                    class="theme-button"
+                    type="button">
+                        Change theme
+                </button>
+            </header>
+
+            <main>
+                <section class="welcome-section">
+                    <p class="eyebrow">A LITTLE CHECK-IN ♡</p>
+                    <h2>Your money, your pace.</h2>
+                    <p>Let's make your money feel a little less overwhelming.</p>
+                </section>
+
+                <!--summary cards here-->
+                <section class="summary-grid" aria-label="Financial summary">
+
+                    <article class="summary-card balance-card">
+                        <p>Available balance</p>
+                        <h2 id="balance">₱0.00</h2>
+                        <span class="card-note">Income minus expenses</span>
+                    </article>
+
+                    <article class="summary-card">
+                        <p>Total income</p>
+                        <h2 id="income" class="income-text">₱0.00</h2>
+                    </article>
+
+                    <article class="summary-card">
+                        <p>Total expenses</p>
+                        <h2 id="expenses" class="expense-text">₱0.00</h2>
+                    </article>
+
+                </section>
+
+                <!--form for add transactions-->
+                <section class="panel"
+                    id="add-transaction">
+
+                        <div class="section-heading">
+                            <div>
+                                <p class="eyebrow">MONEY IN & OUT</p>
+                                <h2>Add a transaction</h2>
+                            </div>
+
+                            <span class="heading-heart"
+                                aria-hidden="true">♡</span>
+                        </div> 
+
+                        <form id="transactionForm">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="type">Transaction type</label>
+                                    <select id="type" name="type" required>
+                                        <option value="expense">Expense</option>
+                                        <option value="income">Income</option>
+                                </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="amount">Amount (₱)</label>
+                                    <input
+                                        id="amount"
+                                        name="amount"
+                                        type="number"
+                                        min="0.01"
+                                        max="1000000000"
+                                        step="0.01"
+                                        placeholder="e.g. 150"
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="category">Category</label>
+                                    <select id="category" name="category" required>
+                                        <option value="Food & Drinks">Food & Drinks</option>
+                                        <option value="Transportation">Transportation</option>
+                                        <option value="Bills & Utilities">Bills & Utilities</option>
+                                        <option value="Shopping">Shopping</option>
+                                        <option value="Health & Personal Care">Health & Personal Care</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Debt Payments">Debt Payments</option>
+                                        <option value="Savings">Savings</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <input id="date" name="date" type="date" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="note">Note <span class="optional">(optional)</span></label>
+                                <input
+                                id="note"
+                                name="note"
+                                type="text"
+                                maxlength="100"
+                                placeholder="e.g. Lunch, salary, commute..."
+                                >
+                            </div>
+
+                            <button class="primary-button" type="submit">
+                                + Add transaction
+                            </button>
+
+                            <p id="formMessage" class="form-message" role="status"></p>
+                        </form>
+                </section>
+
+                <!--transaction history-->
+                <section class="panel" id="transaction-history">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">YOUR MONEY JOURNAL</p>
+                            <h2>Recent transactions</h2>
+                        </div>
+                        <span class="heading-heart" aria-hidden="true">♡</span>
+                    </div>
+
+                    <div id="transactionList" class="transaction-list">
+                    //js will display transactions here.
+                    </div>
+                </section>
+
+            </main>
+
+            <footer class="app-footer">
+                <p>Made with ♡ and a little bit of budgeting.</p>
+                <p>Your data is saved in this browser on this device.</p>
+            </footer>
+
+        </div>    
+
+    </body>
+</html>

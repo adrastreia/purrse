@@ -1,0 +1,521 @@
+
+/* =========================================
+   PURRSE — COLORS AND GENERAL SETTINGS
+   ========================================= */
+
+:root {
+  --background: #FFF9F2;
+  --surface: #FFFFFF;
+  --primary: #DDA7BA;
+  --primary-dark: #A65F7B;
+  --soft-pink: #F8DCE5;
+  --text: #69545E;
+  --muted: #927F87;
+  --border: #F0E3E7;
+  --income: #628B70;
+  --expense: #BB687B;
+  --shadow: 0 6px 24px rgba(135, 91, 108, 0.08);
+}
+
+/* Alternative color themes */
+
+body.blue {
+  --background: #EAF4FF;
+  --surface: #F8FBFF;
+  --primary: #A9CBEF;
+  --primary-dark: #739FCF;
+  --soft-pink: #DCEBFC;
+  --text: #4B6078;
+  --muted: #7188A3;
+  --income: #43866D;
+  --expense: #B85F7A;
+  --border: #D5E5F5;
+}
+
+
+body.lavender {
+  --background: #F8F5FF;
+  --surface: #FFFFFF;
+  --primary: #C5B5E8;
+  --primary-dark: #78639F;
+  --soft-pink: #E9E0FA;
+  --text: #5F5472;
+  --muted: #8D829F;
+  --border: #E9E1F2;
+}
+
+body.matcha {
+  --background: #F6F8F0;
+  --surface: #FFFFFF;
+  --primary: #B9CBA4;
+  --primary-dark: #5F7B4D;
+  --soft-pink: #E5EED9;
+  --text: #4F6048;
+  --muted: #84917B;
+  --border: #E1E9D9;
+}
+
+body.peach {
+  --background: #FFF7F0;
+  --surface: #FFFFFF;
+  --primary: #F0BEA6;
+  --primary-dark: #A9674D;
+  --soft-pink: #FBE5D8;
+  --text: #76574B;
+  --muted: #A1867A;
+  --border: #F3E4DA;
+}
+
+/* =========================================
+   BASIC PAGE STYLES
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-container {
+  width: min(100% - 32px, 1000px);
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADER AND BRAND
+   ========================================= */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: var(--soft-pink);
+  color: var(--primary-dark);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  letter-spacing: -1px;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.theme-button {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   WELCOME SECTION
+   ========================================= */
+
+.welcome-section {
+  padding: 28px 0 24px;
+}
+
+.eyebrow {
+  margin: 0 0 7px;
+  color: var(--primary-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.welcome-section h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  letter-spacing: -1px;
+}
+
+.welcome-section > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* =========================================
+   SUMMARY CARDS
+   ========================================= */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.balance-card {
+  background: var(--soft-pink);
+  border-color: transparent;
+}
+
+.summary-card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.balance-card p {
+  color: var(--text);
+}
+
+.summary-card h2 {
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-size: clamp(1.15rem, 3vw, 1.7rem);
+}
+
+.card-note {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.income-text {
+  color: var(--income);
+}
+
+.expense-text {
+  color: var(--expense);
+}
+
+/* =========================================
+   PANELS AND SECTION HEADINGS
+   ========================================= */
+
+.panel {
+  margin-bottom: 24px;
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.heading-heart {
+  color: var(--primary-dark);
+  font-size: 1.7rem;
+}
+
+/* =========================================
+   TRANSACTION FORM
+   ========================================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.optional {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  background: var(--background);
+  color: var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary-dark);
+  box-shadow: 0 0 0 3px var(--soft-pink);
+}
+
+.primary-button {
+  width: 100%;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary);
+  color: #49323C;
+  font-weight: 700;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.primary-button:hover {
+  filter: brightness(0.97);
+}
+
+.primary-button:active {
+  transform: scale(0.99);
+}
+
+.form-message {
+  min-height: 1.2em;
+  margin: 10px 0 0;
+  color: var(--income);
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   TRANSACTION HISTORY
+   ========================================= */
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-symbol {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--soft-pink);
+  color: var(--primary-dark);
+  font-size: 1.2rem;
+}
+
+.transaction-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-details h3 {
+  overflow-wrap: anywhere;
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+}
+
+.transaction-details p {
+  overflow-wrap: anywhere;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.transaction-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.transaction-amount {
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.transaction-amount.income-text {
+  color: var(--income);
+}
+
+.transaction-amount.expense-text {
+  color: var(--expense);
+}
+
+.delete-button {
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.delete-button:hover {
+  color: var(--expense);
+  border-color: var(--expense);
+}
+
+.empty-state {
+  padding: 32px 12px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-state p {
+  margin: 6px 0;
+}
+
+.empty-state .empty-heart {
+  font-size: 2rem;
+  color: var(--primary-dark);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.app-footer {
+  padding: 12px 0 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.app-footer p {
+  margin: 5px 0;
+}
+
+/* =========================================
+   MOBILE LAYOUT
+   ========================================= */
+
+@media (max-width: 650px) {
+  .app-container {
+    width: min(100% - 22px, 1000px);
+  }
+
+  .app-header {
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+
+  .brand h1 {
+    font-size: 1.45rem;
+  }
+
+  .tagline {
+    max-width: 160px;
+    font-size: 0.7rem;
+  }
+
+  .theme-button {
+    padding: 8px 10px;
+    font-size: 0.76rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .balance-card {
+    grid-column: 1 / -1;
+  }
+
+  .summary-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .panel {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .theme-button {
+    max-width: 100px;
+  }
+}
